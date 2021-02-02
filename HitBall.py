@@ -83,11 +83,26 @@ def paddle_a_down():
     y -= 20
     paddle_a.sety(y)
 
+def paddle_b_up():
+    # To get the current y-coordinate
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+def paddle_b_down():
+    # To get the current y-coordinate
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
 # Keyboard binding
 # To make the windows listen
 win.listen()
 win.onkeypress(paddle_a_up, 'w')
 win.onkeypress(paddle_a_down, 's')
+
+win.onkeypress(paddle_b_up, 'Up')
+win.onkeypress(paddle_b_down, 'Down')
 
 # Main game loop
 while True:
