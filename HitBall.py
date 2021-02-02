@@ -73,7 +73,7 @@ ball.goto(0, 0)
 # Ball movements - dx--> Change in x, dy--> change in y
 
 ball.dx = 0.3
-ball.dy = -0.3
+ball.dy = 0.3
 
 # Movement functions
 def paddle_a_up():
@@ -130,4 +130,12 @@ while True:
     if (ball.ycor() < -290):
         ball.sety(-290)
         ball.dy *= -1
+
+    if (ball.xcor() > 390):
+        ball.goto(0,0)
+        ball.dx *=-1
+
+    if (ball.xcor() < -390):
+        ball.goto(0,0)
+        ball.dx *=-1
 
