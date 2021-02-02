@@ -29,7 +29,7 @@ paddle_a.color("brown")
 paddle_a.penup()
 
 # Give shape to the object - Our basic object has a shape of 20px-20px, so stretch-wid=5 means 5 times the default
-paddle_a.shapesize(stretch_wid=7, stretch_len=1)
+paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 
 # Position of the object
 paddle_a.goto(-365, 0)
@@ -47,7 +47,7 @@ paddle_b.color("brown")
 paddle_b.penup()
 
 # Give shape to the object - Our basic object has a shape of 20px-20px, so stretch-wid=5 means 5 times the default
-paddle_b.shapesize(stretch_wid=7, stretch_len=1)
+paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 
 # Position of the object
 paddle_b.goto(365, 0)
@@ -138,4 +138,9 @@ while True:
     if (ball.xcor() < -390):
         ball.goto(0,0)
         ball.dx *=-1
+
+    # Paddle and ball collisions
+    if(ball.xcor() > 340 and ball.xcor() < 350 and ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40 ):
+        ball.setx(340)
+        ball.dx *= -1   
 
