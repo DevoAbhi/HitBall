@@ -77,11 +77,17 @@ def paddle_a_up():
     y += 20
     paddle_a.sety(y)
 
-# Keyboard binding
+def paddle_a_down():
+    # To get the current y-coordinate
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
 
+# Keyboard binding
 # To make the windows listen
 win.listen()
 win.onkeypress(paddle_a_up, 'w')
+win.onkeypress(paddle_a_down, 's')
 
 # Main game loop
 while True:
