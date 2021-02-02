@@ -16,6 +16,11 @@ win.setup(width=800, height=600)
 # This is added so that there is no update in the screen. This enables faster and smoother gameplay
 win.tracer(0)
 
+#Score
+score_a = 0
+score_b = 0
+
+
 # Paddle A graphics
 paddle_a = turtle.Turtle()
 
@@ -143,10 +148,16 @@ while True:
     if (ball.xcor() > 390):
         ball.goto(0,0)
         ball.dx *=-1
+        score_a += 1
+        pen.clear()
+        pen.write("Player A : {}     Player B : {}".format(score_a, score_b), align="center", font=("Courier", 25, "bold"))
 
     if (ball.xcor() < -390):
         ball.goto(0,0)
         ball.dx *=-1
+        score_b +=1
+        pen.clear()
+        pen.write("Player A : {}     Player B : {}".format(score_a, score_b), align="center", font=("Courier", 25, "bold"))
 
     # Paddle and ball collisions
     if(ball.xcor() > 340 and ball.xcor() < 350 and ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40 ):
