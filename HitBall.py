@@ -70,6 +70,19 @@ ball.shapesize(stretch_wid=1.5, stretch_len=1.5)
 # Position of the object 
 ball.goto(0, 0)
 
+# Movement functions 
+def paddle_a_up():
+    # To get the current y-coordinate
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+# Keyboard binding
+
+# To make the windows listen
+win.listen()
+win.onkeypress(paddle_a_up, 'w')
+
 # Main game loop
 while True:
-    win.update()
+     win.update()
