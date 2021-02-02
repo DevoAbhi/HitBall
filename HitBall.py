@@ -52,6 +52,24 @@ paddle_b.shapesize(stretch_wid=7, stretch_len=1)
 # Position of the object 
 paddle_b.goto(365, 0)
 
+# Ball graphics
+ball = turtle.Turtle()
+
+#This is speed of animation. 0 is the fastest upto 10
+ball.speed(0)
+ball.shape('circle')
+ball.color("brown")
+
+# This makes sure that the object created does not draw 
+# anyting on the window
+ball.penup()
+
+# Give shape to the object - Our basic object has a shape of 20px-20px, so stretch-wid=5 means 5 times the default
+ball.shapesize(stretch_wid=1.5, stretch_len=1.5)
+
+# Position of the object 
+ball.goto(0, 0)
+
 # Main game loop
 while True:
     win.update()
